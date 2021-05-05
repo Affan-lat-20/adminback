@@ -59,14 +59,14 @@ exports.login = async(req,res,next) =>
 {
     //User Validation before login
     
-    const schema = Joi.object({ 
-        email: Joi.string().min(6).required(),
-        password: Joi.string().min(6).required()
-    });
+    // const schema = Joi.object({ 
+    //     email: Joi.string().min(6).required(),
+    //     password: Joi.string().min(6).required()
+    // });
     
-    const {error} = schema.validate(req.body);
+    // const {error} = schema.validate(req.body);
     
-    if (error) return res.status(400).send(error.details[0].message);
+    // if (error) return res.status(400).send(error.details[0].message);
     
      //Check if email is on Database
     
@@ -145,6 +145,7 @@ exports.edit =  function (req,res,next){
         
         const user = await query
         res
+        
         .status(200)
         .json(user);
                 

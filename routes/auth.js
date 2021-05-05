@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { authUser, authRole } = require('./basicAuth')
+const { authUser, authRole, getauthUser } = require('./basicAuth')
 const User = require('../model/User');
 const Influencer = require("../model/Users");
 const YoutubeData = require("../model/YoutubeData");
@@ -20,7 +20,7 @@ const RolebaseController=require("../controllers/RolebaseauthController")
 router.post('/register',AuthController.register);
 
 //login
-router.post('/login',authUser,AuthController.login);
+router.post('/login',AuthController.login);
 
 //delete user from db//
 router.delete('/delete/:id',AuthController.delete);
@@ -33,7 +33,7 @@ router.put('/edit/:id',AuthController.edit);
 //get one userinfo//
 router.get('/userGet/:id',AuthController.userGet);
 //get all users data//
-router.get('/userlist',authUser,AuthController.allusersGet);
+router.get('/:id/userlist/:module',getauthUser,AuthController.allusersGet);
 router.get('/getspecif',AuthController.finduser);
 
 //**************************************Company user ends here**************************************//
