@@ -10,7 +10,7 @@ async function getauthUser(req, res, next) {
    let role;
    let final;
   try {
-    const response = await axios.get(`http://localhost:5000/api/user/getspecif?_id=${req.params.id}`);
+    const response = await axios.get(`https://adminop.herokuapp.com/api/user/getspecif?_id=${req.params.id}`);
     // console.log(response.data[0].userRole);
     console.log(response.data[0].userRole);
     role=response.data[0].userRole;
@@ -20,7 +20,7 @@ async function getauthUser(req, res, next) {
 
  
   try {
-    const roles = await axios.get(`http://localhost:5000/api/user/rolebase?userRole=${role}&module=${module}&operation=${requestMethod}`);
+    const roles = await axios.get(`https://adminop.herokuapp.com/api/user/rolebase?userRole=${role}&module=${module}&operation=${requestMethod}`);
     // console.log(response.data[0].userRole);
     console.log(roles.data);
     final=roles.data;
@@ -52,7 +52,7 @@ async function authUser(req, res, next) {
    let role;
    let final;
   try {
-    const response = await axios.get(`http://localhost:5000/api/user/getspecif?_id=${req.body._id}`);
+    const response = await axios.get(`https://adminop.herokuapp.com/api/user/getspecif?_id=${req.body._id}`);
     // console.log(response.data[0].userRole);
     console.log(response.data[0].userRole);
     role=response.data[0].userRole;
@@ -62,7 +62,7 @@ async function authUser(req, res, next) {
 
  
   try {
-    const roles = await axios.get(`http://localhost:5000/api/user/rolebase?userRole=${role}&module=${module}&operation=${requestMethod}`);
+    const roles = await axios.get(`https://adminop.herokuapp.com/api/user/rolebase?userRole=${role}&module=${module}&operation=${requestMethod}`);
     // console.log(response.data[0].userRole);
     console.log(roles.data);
     final=roles.data;
