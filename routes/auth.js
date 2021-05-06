@@ -34,6 +34,7 @@ router.put('/edit/:id',AuthController.edit);
 router.get('/userGet/:id',AuthController.userGet);
 //get all users data//
 router.get('/:id/userlist/:module',getauthUser,AuthController.allusersGet);
+//admin middlewareapi
 router.get('/getspecif',AuthController.finduser);
 
 //**************************************Company user ends here**************************************//
@@ -76,6 +77,8 @@ router.get('/tiktok/:username',TicktokController.tiktokfollower);
 
 router.post('/rolebase',RolebaseController.Rolebaseadd);
 router.get('/rolebase',RolebaseController.findrole);
+
+router.get('/:id/rolemanagment/:module',getauthUser,RolebaseController.findrole);
 router.put('rolebase/:id',RolebaseController.roleedit);
 
 module.exports = router;
