@@ -30,7 +30,7 @@ router.delete('/delete/:id',AuthController.delete);
 
 //update user info//
 
-router.put('/edit/:id',AuthController.edit);
+router.put('/userGet/:id',AuthController.edit);
 
 //get one userinfo//
 router.get('/userGet/:id',AuthController.userGet);
