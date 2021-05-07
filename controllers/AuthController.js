@@ -122,7 +122,7 @@ exports.edit =  function (req,res,next){
         User.findOne({_id: req.params.id},function(error, user){
             console.log("This user will get selected "+ user);
 
-            res.send("This user is selected"+ user);
+            res.send(user);
             next();
         });
     }
