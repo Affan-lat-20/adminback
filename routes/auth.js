@@ -35,7 +35,7 @@ router.put('/edit/:id',AuthController.edit);
 //get one userinfo//
 router.get('/userGet/:id',AuthController.userGet);
 //get all users data//
-router.get('/:id/userlist/:module',AuthController.allusersGet);
+router.get('/:id/userlist/:module/:met',getauthUser,AuthController.allusersGet);
 //admin middlewareapi
 router.get('/getspecif',AuthController.finduser);
 
