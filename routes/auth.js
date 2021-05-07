@@ -4,6 +4,7 @@ const User = require('../model/User');
 const Influencer = require("../model/Users");
 const YoutubeData = require("../model/YoutubeData");
 const RolebaseAuth= require('../model/RolebaseAuth');
+const Rolename=require('../model/Rolename');
 const { Router } = require('express');
 const AuthController = require("../controllers/AuthController");
 
@@ -12,7 +13,8 @@ const YoutubeController=require("../controllers/YoutubeController");
 const InstagramController=require("../controllers/InstagramController");
 const TicktokController=require("../controllers/ticktokController")
 const InstaControl=require("../controllers/InstaControl");
-const RolebaseController=require("../controllers/RolebaseauthController")
+const RolebaseController=require("../controllers/RolebaseauthController");
+const RolenameController=require("../controllers/RolenameController")
 //const registerValidation = require('../validation');
 
 //***********************************Company routes start**********************/    
@@ -78,7 +80,13 @@ router.get('/tiktok/:username',TicktokController.tiktokfollower);
 router.post('/rolebase',RolebaseController.Rolebaseadd);
 router.get('/rolebase',RolebaseController.findrole);
 
-router.get('/:id/rolemanagment/:module',getauthUser,RolebaseController.findrole);
+router.get('/:id/rolemanagment/:module/:met',getauthUser,RolebaseController.findrole);
 router.put('rolebase/:id',RolebaseController.roleedit);
+
+
+//===============================================ROlenames//
+router.post('/rolename',RolenameController.addrolename);
+router.get('/rolename',RolenameController.getrolename);
+router.put('/rolename/:id',RolenameController.editrolename);
 
 module.exports = router;

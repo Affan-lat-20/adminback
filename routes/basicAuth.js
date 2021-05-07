@@ -3,6 +3,9 @@ const axios = require('axios');
 async function getauthUser(req, res, next) {
   let requestMethod = req.method;
    console.log(requestMethod);
+  
+  let reqs=req.params.met;
+  console.log(reqs);
    let userid=req.params.id;
    console.log(userid);
    let module=req.params.module;
@@ -20,7 +23,7 @@ async function getauthUser(req, res, next) {
 
  
   try {
-    const roles = await axios.get(`https://adminop.herokuapp.com/api/user/rolebase?userRole=${role}&module=${module}&operation=${requestMethod}`);
+    const roles = await axios.get(`https://adminop.herokuapp.com/api/user/rolebase?userRole=${role}&module=${module}&operation=${reqs}`);
     // console.log(response.data[0].userRole);
     console.log(roles.data);
     final=roles.data;
