@@ -56,3 +56,16 @@ exports.roleedit =  function (req,res){
     
    
     }
+
+
+    exports.Rolebasedelete =  async(req,res)=>{
+
+        RolebaseAuth.findOne({_id: req.params.id}, function (error, rolebaseauth){
+            console.log("This influencer will get deleted " + rolebaseauth);
+            
+            rolebaseauth.remove();
+            res.send("This influencer is removed "+ rolebaseauth.firstName);
+        
+        });
+        
+    }
