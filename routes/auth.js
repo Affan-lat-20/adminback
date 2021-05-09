@@ -82,7 +82,7 @@ router.get('/rolebase',RolebaseController.findrole);
 
 router.get('/:id/rolemanagment/:module/:met',getauthUser,RolebaseController.findrole);
 router.put('rolebase/:id',RolebaseController.roleedit);
-router.delete('rolebase.:id',RolebaseController.Rolebasedelete);
+router.delete('rolebase/:id',RolebaseController.Rolebasedelete);
 
 
 //===============================================ROlenames//
