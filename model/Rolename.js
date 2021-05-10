@@ -7,6 +7,7 @@ const Rolename = new Schema(
     {
         userRole:{
             type: String,
+            unique: true,
             min:4,
             max:20
 

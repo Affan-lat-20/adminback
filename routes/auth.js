@@ -85,6 +85,7 @@ router.put('/rolebase/:id',RolebaseController.roleedit);
 router.delete('/rolebase/:id',RolebaseController.rolebasedelete);
 
 
+
 //===============================================ROlenames//
 router.post('/rolename',RolenameController.addrolename);
 router.get('/rolename',RolenameController.getrolename);

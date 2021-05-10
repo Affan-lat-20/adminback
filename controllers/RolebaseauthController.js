@@ -69,3 +69,6 @@ exports.roleedit =  function (req,res){
         });
         
     }
+
+
+ 
