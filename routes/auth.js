@@ -19,7 +19,7 @@ const RolenameController=require("../controllers/RolenameController")
 
 //***********************************Company routes start**********************/    
 //register new user
-router.post('/register',AuthController.register);
+router.post('/:id/register/:module/:met',getauthUser,AuthController.register);
 
 //login
 router.post('/login',AuthController.login);
